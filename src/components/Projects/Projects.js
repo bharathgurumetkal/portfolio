@@ -3,6 +3,7 @@ import './Projects.css'
 import blog from '../../assets/blog.avif'
 import thisability from '../../assets/thisability.png'
 import product from '../../assets/product.png'
+import redux from '../../assets/Redux.png'
 
 function Projects() {
   const [showModal, setShowModal] = useState(false);
