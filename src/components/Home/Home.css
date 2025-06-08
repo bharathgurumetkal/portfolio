@@ -1,0 +1,85 @@
+.name{
+    background: linear-gradient(
+        to right,
+        #de3053 20%,
+        #da6075 30%,
+        #ea9696 70%,
+        #e34b21 80%
+    );
+    font-size: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+.text-container{
+    display: inline-block;
+}
+.passion{
+    color: rgb(104, 94, 148);
+    border-right: 5px solid;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(30, end), cursor .4s step-end infinite alternate;
+
+}
+.intro-section .linkedin{
+    border: 2px solid rgb(43, 61, 226);
+    color:rgb(43, 61, 226);
+}
+.intro-section .linkedin:hover{
+    background-color: rgb(43, 61, 226);
+    color: white;
+}
+.intro-section .linkedin a:hover{
+    color: white;
+}
+.hero{
+    display: flex;
+}
+.intro-section .resume{
+
+    color: white;
+    background-color: rgb(88, 41, 159);
+}
+
+.profile-pic img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.intro-section .resume:hover{
+    border: 2px solid blueviolet;
+    color: white;
+}
+
+@keyframes cursor{
+    50% { border-color:transparent;}
+}
+@keyframes typing {
+    from {width: 0;}
+    to {width:100%;}
+}
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .hero{
+        flex-direction: column-reverse;
+    }
+    .profile-pic img{
+        width: 350px;
+        height: 350px;
+    }
+   
+}

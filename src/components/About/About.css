@@ -1,0 +1,78 @@
+.education-card {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  transition: all 0.6s ease-in-out;
+  transform-origin: bottom right;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.education-card .icon {
+  color: rgb(231, 39, 39); 
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-color: rgb(220, 53, 69);
+  border: 1px solid rgb(210, 32, 38);
+  clip-path: circle(0% at 100% 100%);
+  transition: clip-path 0.65s ease-in-out;
+  z-index: 0;
+}
+
+.education-card:hover::before {
+  clip-path: circle(150% at 50% 50%);
+}
+
+.education-card:hover .icon {
+  color: white;
+}
+
+.education-card:hover {
+  color: white;
+  transform: translate(-10px, -10px);
+}
+
+.education-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.details p {
+  margin: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+  .education-card {
+    width: 100% !important; 
+    max-width: 350px; 
+    margin: 0 auto 1rem auto; 
+  }
+  
+
+  .education .col-md-4 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+
+  .education {
+    padding: 0 1rem !important; 
+  }
+  
+
+  .education-card h6 {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+}
+
+

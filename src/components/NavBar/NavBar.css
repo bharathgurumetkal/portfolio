@@ -1,0 +1,161 @@
+/* Active state for navigation links */
+.active {
+    border-bottom: 2.5px solid red !important;
+}
+
+/* Custom hamburger menu icon */
+.navbar-toggler-icon-custom {
+    display: flex;
+    flex-direction: column;
+    width: 25px;
+    height: 20px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon-custom span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hamburger animation when open */
+.navbar-toggler-icon-custom.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-toggler-icon-custom.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler-icon-custom.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Remove default Bootstrap toggler styles */
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 991.98px) {
+    /* Navbar brand adjustments for mobile */
+    .navbar-brand {
+        font-size: 1.1rem !important;
+        padding-right: 1rem;
+    }
+    
+    /* Mobile menu styling */
+    .navbar-collapse {
+        background-color: rgb(24, 31, 40);
+        margin-top: 1rem;
+        border-radius: 8px;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Mobile navigation items */
+    .navbar-nav {
+        text-align: center;
+        gap: 0 !important;
+    }
+    
+    .nav-item {
+        margin: 0.2rem 0;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem !important;
+        padding: 0.8rem 1rem !important;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateX(5px);
+    }
+    
+    /* Active state for mobile */
+    .nav-link.active {
+        background-color: rgba(255, 0, 0, 0.1);
+        border-bottom: none !important;
+   
+    }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 992px) {
+    .navbar-nav {
+        align-items: center;
+    }
+    
+    .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+.nav-link:hover:not(.active) {
+    color: #ff6b6b !important;
+    transform: translateY(-2px);
+}
+
+/* Hover effect for desktop - only show on non-active items */
+.nav-link:not(.active)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: red;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:not(.active):hover::after {
+    width: 100%;
+}
+
+/* Active item hover behavior - just color change, no border animation */
+.nav-link.active:hover {
+    color: #ff6b6b !important;
+}
+}
+
+/* Ensure navbar stays fixed properly */
+.navbar {
+    z-index: 1030;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Small mobile devices */
+@media (max-width: 575.98px) {
+    .navbar-brand {
+        font-size: 1rem !important;
+    }
+    
+    .container-fluid {
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-link {
+        font-size: 1rem !important;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .navbar-brand {
+        font-size: 0.9rem !important;
+    }
+    
+    .container-fluid {
+        padding: 0.5rem 0.75rem;
+    }
+}
